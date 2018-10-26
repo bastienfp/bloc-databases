@@ -1,0 +1,91 @@
+1. What data types do each of these values represent?
+
+"A Clockwork Orange" 	=> String
+42			=> Integer
+09/02/1945		=> Date
+98.7			=> Float
+$15.99			=> Money
+
+2. Explain when a database would be used. Explain when a text file would be used.
+
+Answer:
+A database would be used when we want to store data and make it easy to search for specific data. A database allows us to handle multiple applications accessing the data and will also allow the data to persist after an application process ends.
+
+A text file is used to store the code for an application and can also be used to consume data retrieved from a database. It can allow the data to persist beyond the end of a program but cannot be accessed by multiple application at the same time.
+
+3. Describe one difference between SQL and other programming languages.
+
+Answer:
+Structure Query Language (SQL) is a declarative language and not a procedural one like JavaScript.
+This means that the concern is what to find and NOT HOW to find it. We don't write steps to determine how to answer the query, we only write the query itself.
+
+3. In your own words, explain how the pieces of a database system fit together at a high level.
+
+Answer: 
+A database is a data storage that displays and stores data using a table structure. It allows the data to persist even after an application process ends. It is composed of :
+1. columns that define what the data represent and store and allow for a specific data type in each column;
+2. rows that constitute a complete unit of data. It comprises multiple cells that can have different data types; and
+3. cells that store a particular value, a piece of information described by its column.
+
+The database lives outside the code of an application. Many applications can access the database at the same time and search (or query) the database using a Structured Query Language to retrieve data sets. 
+
+4. Explain the meaning of table, row, column, and value.
+
+Answer:
+Databases display data using a table structure. The columns define WHAT the data represents (labels) and the rows constitute a complete unit of the data. Each cell in the table contains a specific value that represents a piece of information that the column name (label) describes.
+
+5. List three data types that can be used in a table.
+
+Answer:
+Integer
+Float
+String
+
+6. Given this payments table, provide an English description of the following queries and include their results:
+
+     SELECT date, amount
+     FROM payments;
+
+Answer:
+Query description => What are the dates and amounts from the payments table?
+Query result => 	date 		| 	amount
+			2016-05-01 	|	1500.00
+			2016-05-10	|	37.00
+			2016-05-15	|	124.93
+			2016-05-23	|	54.72
+
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+Answer:
+Query description => What are the amounts great than 500 from the payments table?
+Query result => 	amount
+			1500.00
+
+     SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+Answer:
+Query description => What are the columns from the payments table with a payee equal to Mega Foods?
+Query result => 	date 		| 	payee		|	amount		|	memo
+			2016-05-15 	|	Mega Foods	|	124.93		|	Groceries
+
+
+7. Given this users table, write SQL queries using the following criteria and include the output:
+
+a. The email and sign-up date for the user named DeAndre Data.
+b. The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+c. All the columns for the user ID equal to 4.
+
+Answer:
+
+a. 
+SELECT email, signup FROM users WHERE name = 'DeAndre Data';
+
+b.
+SELECT userid FROM users WHERE email = 'aleesia.algorithm@uw.edu';
+
+c.
+SELECT * FROM users WHERE userid = 4;
